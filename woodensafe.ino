@@ -1,5 +1,11 @@
 #include <Wire.h>
 #include "defines.h"
+#include "leds.h"
+#include "buzzer.h"
+#include "motor.h"
+#include "persistents.h"
+#include "pinpad.h"
+#include "sensors.h"
 
 /*Модули
 
@@ -7,17 +13,17 @@
   
   LED зелёного цвета - инцикация успешного выполнения функции (#11)
   LED белого цвета - отладочный LED - вывод текущего режима (#10)
-  Buzzer - звуковое сопровождение: (#9)
+  Buzzer - звуковое сопровождение: (#8)
       - нажатие кнопки
       - правильное действие
       - ошибка
       
  
   ПИН-клавиатура
-  ##22-29 (пины 8 - 1)
+  ##A0-A5,D6
   
   
-  Серво-мотор #8
+  Серво-мотор #9
 
   Датчик открытия двери сейфа - #7
 
@@ -88,7 +94,7 @@ void setup() {
 
   _buzzer_setup();
 
-  _setup_snsors();
+  _setup_sensors();
   
 
   // Factory PIN code init

@@ -1,5 +1,5 @@
 
-void _setup_snsors( void ) 
+void _setup_sensors( void ) 
 {
   pinMode( SAFE_OPEN_PORT, INPUT_PULLUP );
   pinMode( PROG_BUTTON_PORT, INPUT_PULLUP );

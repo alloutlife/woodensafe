@@ -1,5 +1,5 @@
 
-void _setup_snsors( void );
+void _setup_sensors( void );
 
 bool is_safe_door_open( void );
 

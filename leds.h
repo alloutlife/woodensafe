@@ -3,6 +3,7 @@
 
 void _leds_setup( void );
 
+/* PIN code entering when IDLING */
 void _green_led_blink_1( void );
 
 void _green_led_blink_3( void );

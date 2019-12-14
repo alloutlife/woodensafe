@@ -64,7 +64,7 @@ void _led_with_buzzer_keypress_echo( int nLedNo )
   for (int a=0; a<=255;a++)  // Loop, PWM control of LED brightness increase
   {
     analogWrite(_port,a);   // PWM output value a (0~255)
-    delayMicroseconds(delayVal);                //T he duration of the current brightness level. 15ms           
+    delayMicroseconds(delayVal);                // The duration of the current brightness level. 15ms           
   }
 
   _start_play_button_pressed_sound();

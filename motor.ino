@@ -35,7 +35,7 @@ void _setup_safe_door( void )
 void _unlock_safe_door( void )
 {
   _g_servo.attach( MOTOR_CTRL_PORT );    //attachs the servo
-  _g_servo.write( 0 );   // to 0 degrees
+  _g_servo.write( 30 );   // to 0 degrees
   delay( 1000 );
   _g_servo.detach();
 }
@@ -43,7 +43,7 @@ void _unlock_safe_door( void )
 void _lock_safe_door( void )
 {
   _g_servo.attach( MOTOR_CTRL_PORT );    //attachs the servo
-  _g_servo.write( 30 );   // back to 30 degrees
+  _g_servo.write( 0 );   // back to 30 degrees
   delay( 1000 );
   _g_servo.detach();
 }

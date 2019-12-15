@@ -8,11 +8,10 @@ void _setup_sensors( void )
 
 bool is_safe_door_open( void )
 {
-  return LOW == digitalRead( SAFE_OPEN_PORT );
+  return HIGH == digitalRead( SAFE_OPEN_PORT );
 }
 
 bool is_prog_button_pressed( void )
 {
   return LOW == digitalRead( PROG_BUTTON_PORT );
 }
-

@@ -106,6 +106,12 @@ void setup() {
   }
 }
 
+// Functions forward declaration
+void DoPowerUpProcedure();
+void DoSafeClosedProcedure();
+void DoSafeOpenProcedure();
+void DoProgProcedure( bool bConfirmMode );
+
 void loop()
 {
   switch( g_currentState ) {
@@ -127,7 +133,6 @@ void loop()
       break;
   }
 }
-
 
 void DoPowerUpProcedure( void )
 {
@@ -207,7 +212,7 @@ void DoSafeOpenProcedure( void )
   for( ; ; ) {
     
     // Enter the Closed state  
-    if( _read_pinpad_key_async() == 'C' ) {
+    if( _read_pinpad_key_async() == 'A' ) {
   
       if( !is_safe_door_open() ) {
         _led_with_buzzer_keypress_echo( LED_GREEN_PORT );

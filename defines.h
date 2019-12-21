@@ -5,5 +5,5 @@
 #define SOLENOID_CTRL_PORT 9
 #define BUZZER_PORT     8
 
-#define SAFE_OPEN_PORT  6
-#define PROG_BUTTON_PORT  12
+#define SAFE_OPEN_PORT  12
+#define PROG_BUTTON_PORT  7

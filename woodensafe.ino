@@ -89,8 +89,14 @@ SafeBoxState g_currentState = PowerUp;
 void setup() {
   
   // Setup code
-  _leds_setup();
   _setup_safe_door();
+  _leds_setup();
+
+  // Startup leds blinking
+  _white_led_blink_1();
+  _green_led_blink_1();
+  _white_led_blink_1();
+  _green_led_blink_1();
 
   _buzzer_setup();
 
@@ -225,7 +231,6 @@ void DoSafeOpenProcedure( void )
   
     // Enter the PIN programming mode
     if( is_prog_button_pressed() ) {
-      _led_with_buzzer_keypress_echo( LED_WHITE_PORT );
       g_currentState = Prog;
       return;
     }
@@ -241,6 +246,15 @@ int g_newPinPos2 = 0;
 void DoProgProcedure( bool bConfirmMode )
 {
   _white_led_on();
+  for( int k = 0; k < 3; ++k ) {
+    _start_play_button_pressed_sound();
+    delay( 20 );
+    _stop_play_button_pressed_sound();
+    delay( 200 );
+  }
+
+  // This alows to avoid the signal noise
+  delay( 100 );
   
   char* pPinBuffer = 0;
   int* pPinPos = 0;
@@ -272,7 +286,9 @@ void DoProgProcedure( bool bConfirmMode )
     else if( ch == 'C' || is_prog_button_pressed() ) {
 
       // Cancel
-      _led_with_buzzer_keypress_echo( LED_WHITE_PORT );
+      _start_play_button_pressed_sound();
+      delay( 20 );
+     _stop_play_button_pressed_sound();
       g_currentState = SafeOpen;
       break;
       

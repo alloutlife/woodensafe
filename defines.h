@@ -1,5 +1,5 @@
-#define LED_GREEN_PORT  11
-#define LED_WHITE_PORT  10
+#define LED_GREEN_PORT  5   /* Be careful to choose from those pins where analogWrite is suitable */
+#define LED_WHITE_PORT  3   /* Also note pins 9 and 10 are not suitable for that because of Servo.detachx */
 
 #define MOTOR_CTRL_PORT 9
 #define SOLENOID_CTRL_PORT 9

@@ -26,6 +26,8 @@ void _lock_safe_door( void )
 
 
 #include <Servo.h>
+
+// Attention! Pins 9 and 10 are no more suitable for analogWrite()
 Servo _g_servo;    // create servo object to control a servo
 
 void _setup_safe_door( void )
